@@ -1,3 +1,6 @@
 [submodule "cmake"]
 	path = cmake
 	url = git://github.com/jrl-umi3218/jrl-cmakemodules.git
+[submodule "thrust"]
+	path = thrust
+	url = git://github.com/thrust/thrust.git
