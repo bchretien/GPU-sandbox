@@ -9,3 +9,11 @@ TARGET_LINK_LIBRARIES(gpu_hamming_distance ${CUDA_LIBRARIES} stdc++)
 # Test 3: Hash on GPU
 CUDA_ADD_EXECUTABLE(gpu_hash "${CMAKE_CURRENT_SOURCE_DIR}/gpu_hash.cu")
 TARGET_LINK_LIBRARIES(gpu_hash ${CUDA_LIBRARIES} stdc++)
+
+# Test 4: Global vs shared pointer test
+CUDA_ADD_EXECUTABLE(gpu_pointer_type "${CMAKE_CURRENT_SOURCE_DIR}/gpu_pointer_type.cu")
+TARGET_LINK_LIBRARIES(gpu_pointer_type ${CUDA_LIBRARIES} stdc++)
+
+# Test 5: Global memory vs constant memory vs texture memory test
+CUDA_ADD_EXECUTABLE(gpu_memory_comparison "${CMAKE_CURRENT_SOURCE_DIR}/gpu_memory_comparison.cu")
+TARGET_LINK_LIBRARIES(gpu_memory_comparison ${CUDA_LIBRARIES} stdc++)

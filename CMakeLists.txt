@@ -39,11 +39,11 @@ IF(CUDA_FOUND)
 
   IF (CMAKE_BUILD_TYPE STREQUAL "Debug")
       # -G -g : CUDA debug mode (useful with cuda-memcheck)
-      SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};--ptxas-options=-O0;-G;-g;-lineinfo")
+      SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-G;-g;-lineinfo")
       # -DTHRUST_DEBUG : Thrust debug mode
       #set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-DTHRUST_DEBUG;-lineinfo")
   ELSE()
-      SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-O3;-g;-lineinfo")
+      SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-Xcicc;-O3;-Xptxas;-O3;-g;-lineinfo")
   ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
 ENDIF(CUDA_FOUND)
 
