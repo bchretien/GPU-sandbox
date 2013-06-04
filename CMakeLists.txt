@@ -35,7 +35,7 @@ IF(CUDA_FOUND)
   ENDIF()
 
   # Choose architecture
-  SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-arch=sm_20")
+  SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35")
 
   IF (CMAKE_BUILD_TYPE STREQUAL "Debug")
       # -G -g : CUDA debug mode (useful with cuda-memcheck)
