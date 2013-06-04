@@ -17,3 +17,7 @@ TARGET_LINK_LIBRARIES(gpu_pointer_type ${CUDA_LIBRARIES} stdc++)
 # Test 5: Global memory vs constant memory vs texture memory test
 CUDA_ADD_EXECUTABLE(gpu_memory_comparison "${CMAKE_CURRENT_SOURCE_DIR}/gpu_memory_comparison.cu")
 TARGET_LINK_LIBRARIES(gpu_memory_comparison ${CUDA_LIBRARIES} stdc++)
+
+# Test 6: Element-wise product of complex vectors
+CUDA_ADD_EXECUTABLE(gpu_complex_multiplication "${CMAKE_CURRENT_SOURCE_DIR}/gpu_complex_multiplication.cu")
+TARGET_LINK_LIBRARIES(gpu_complex_multiplication ${CUDA_LIBRARIES} stdc++)

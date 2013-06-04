@@ -11,6 +11,7 @@ A sandbox for GPU development.
 * [NT hash with PyCUDA][4] (based on [this Stack Overflow question][5])
 * [Global memory vs Constant memory vs Texture memory][6] (based on [this Stack Overflow question][7])
 * [Pointer type checking][8] (based on [this Stack Overflow question][9])
+* [Element-wise product of complex vectors][10] (based on [this Stack Overflow question][11])
 
 
 [1]: src/gpu_partitioning.cu
@@ -22,3 +23,5 @@ A sandbox for GPU development.
 [7]: http://stackoverflow.com/questions/14398416/convenience-of-2d-cuda-texture-memory-against-global-memory
 [8]: src/gpu_pointer_type.cu
 [9]: http://stackoverflow.com/questions/16684212/strange-behavior-when-detecting-global-memory
+[10]: src/gpu_complex_multiplication.cu
+[11]: http://stackoverflow.com/questions/16899237/element-by-element-vector-multiplication-cuda
