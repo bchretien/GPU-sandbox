@@ -2,6 +2,8 @@
 #include <iostream>
 #include <stdio.h>
 
+#include "cuda_utils.h"
+
 #define INIT_A 0x67452301
 #define INIT_B 0xefcdab89
 #define INIT_C 0x98badcfe
@@ -9,30 +11,6 @@
 
 #define SQRT_2 0x5a827999
 #define SQRT_3 0x6ed9eba1
-
-#define CUDA_CHECK_ERROR()  __cuda_check_errors(__FILE__, __LINE__)
-#define CUDA_SAFE_CALL(err) __cuda_safe_call(err, __FILE__, __LINE__)
-
-inline void __cuda_check_errors(const char *filename, const int line_number)
-{
-    cudaError err = cudaDeviceSynchronize();
-    if(err != cudaSuccess)
-    {
-        printf("CUDA error %i at %s:%i: %s\n",
-               err, filename, line_number, cudaGetErrorString(err));
-        exit(-1);
-    }
-}
-
-inline void __cuda_safe_call(cudaError err, const char *filename, const int line_number)
-{
-    if (err != cudaSuccess)
-    {
-        printf("CUDA error %i at %s:%i: %s\n",
-               err, filename, line_number, cudaGetErrorString(err));
-        exit(-1);
-    }
-}
 
 __device__ void NTLM(char *, int, char*);
 __device__ __constant__ char itoa16[17] = "0123456789ABCDEF";
