@@ -25,3 +25,7 @@ TARGET_LINK_LIBRARIES(gpu_complex_multiplication ${CUDA_LIBRARIES} stdc++)
 # Test 7: Count the occurrences of some specific case
 CUDA_ADD_EXECUTABLE(gpu_counters "${CMAKE_CURRENT_SOURCE_DIR}/gpu_counters.cu")
 TARGET_LINK_LIBRARIES(gpu_counters ${CUDA_LIBRARIES} stdc++)
+
+# Test 8: Local register passing
+CUDA_ADD_EXECUTABLE(gpu_register_passing "${CMAKE_CURRENT_SOURCE_DIR}/gpu_register_passing.cu")
+TARGET_LINK_LIBRARIES(gpu_register_passing ${CUDA_LIBRARIES} stdc++)
