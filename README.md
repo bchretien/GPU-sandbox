@@ -14,6 +14,7 @@ A sandbox for GPU development.
 * [Element-wise product of complex vectors][10] (based on [this Stack Overflow question][11])
 * [Counters for some specific kernel branches][12] (based on [this Stack Overflow question][13])
 * [Passing local registers as arguments to device kernels][14]
+* [Resetting device when catching signals][15] (based on [this Stack Overflow question][16])
 
 
 [1]: src/gpu_partitioning.cu
@@ -30,3 +31,5 @@ A sandbox for GPU development.
 [12]: src/gpu_counters.cu
 [13]: http://stackoverflow.com/questions/17139688/counting-occurrences-of-specific-events-in-cuda-kernels
 [14]: src/gpu_register_passing.cu
+[15]: src/gpu_sigint.cu
+[16]: http://stackoverflow.com/questions/7144195/cudadevicereset-for-multiple-gpus

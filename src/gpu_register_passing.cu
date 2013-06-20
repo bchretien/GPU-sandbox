@@ -1,5 +1,4 @@
 #include <iostream>
-#include <time.h>
 #include <assert.h>
 
 #include "cuda_utils.h"

@@ -29,3 +29,7 @@ TARGET_LINK_LIBRARIES(gpu_counters ${CUDA_LIBRARIES} stdc++)
 # Test 8: Local register passing
 CUDA_ADD_EXECUTABLE(gpu_register_passing "${CMAKE_CURRENT_SOURCE_DIR}/gpu_register_passing.cu")
 TARGET_LINK_LIBRARIES(gpu_register_passing ${CUDA_LIBRARIES} stdc++)
+
+# Test 9: Signal handling
+CUDA_ADD_EXECUTABLE(gpu_sigint "${CMAKE_CURRENT_SOURCE_DIR}/gpu_sigint.cu")
+TARGET_LINK_LIBRARIES(gpu_sigint ${CUDA_LIBRARIES} stdc++)
