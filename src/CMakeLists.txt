@@ -33,3 +33,11 @@ TARGET_LINK_LIBRARIES(gpu_register_passing ${CUDA_LIBRARIES} stdc++)
 # Test 9: Signal handling
 CUDA_ADD_EXECUTABLE(gpu_sigint "${CMAKE_CURRENT_SOURCE_DIR}/gpu_sigint.cu")
 TARGET_LINK_LIBRARIES(gpu_sigint ${CUDA_LIBRARIES} stdc++)
+
+# Bug 1: compiler crash with wrong array reference
+CUDA_ADD_EXECUTABLE(gpu_bug_1 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_ice.cu")
+TARGET_LINK_LIBRARIES(gpu_bug_1 ${CUDA_LIBRARIES} stdc++)
+
+# Bug 2: compiler crash
+CUDA_ADD_EXECUTABLE(gpu_bug_2 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_ice2.cu")
+TARGET_LINK_LIBRARIES(gpu_bug_2 ${CUDA_LIBRARIES} stdc++)
