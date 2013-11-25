@@ -2,6 +2,7 @@
 
 # Requires at least CMake 2.8 to find CUDA
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+ENABLE_LANGUAGE(CXX)
 
 INCLUDE(cmake/base.cmake)
 
@@ -17,6 +18,11 @@ SET(HEADERS "")
 INCLUDE_DIRECTORIES(
   SYSTEM
   "${CMAKE_CURRENT_SOURCE_DIR}/thrust"
+)
+
+# FIXME: path may be wrong, but is not directly available with FindCUDA.cmake
+LINK_DIRECTORIES (
+  "/opt/cuda/lib64"
 )
 
 SETUP_PROJECT()
@@ -35,7 +41,7 @@ IF(CUDA_FOUND)
   ENDIF()
 
   # Choose architecture
-  SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35")
+  SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-gencode arch=compute_30,code=sm_30")
 
   IF (CMAKE_BUILD_TYPE STREQUAL "Debug")
       # -G -g : CUDA debug mode (useful with cuda-memcheck)
