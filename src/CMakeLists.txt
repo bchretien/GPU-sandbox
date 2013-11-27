@@ -37,3 +37,6 @@ CUDA_ADD_EXECUTABLE(gpu_bug_1 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_ice
 
 # Bug 2: compiler crash
 CUDA_ADD_EXECUTABLE(gpu_bug_2 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_ice2.cu")
+
+# Bug 3: assert compiler error
+CUDA_ADD_EXECUTABLE(gpu_bug_3 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_assert.cu")
