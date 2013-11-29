@@ -32,6 +32,9 @@ CUDA_ADD_EXECUTABLE(gpu_array_scan "${CMAKE_CURRENT_SOURCE_DIR}/gpu_array_scan.c
 CUDA_ADD_EXECUTABLE(gpu_nvtx "${CMAKE_CURRENT_SOURCE_DIR}/gpu_nvtx.cu")
 TARGET_LINK_LIBRARIES(gpu_nvtx ${CUDA_LIBRARIES} nvToolsExt)
 
+# Test 12: array of structures of pointers
+CUDA_ADD_EXECUTABLE(gpu_structure_pointers "${CMAKE_CURRENT_SOURCE_DIR}/gpu_structure_pointers.cu")
+
 # Bug 1: compiler crash with wrong array reference
 CUDA_ADD_EXECUTABLE(gpu_bug_1 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_ice.cu")
 
