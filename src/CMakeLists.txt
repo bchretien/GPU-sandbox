@@ -35,6 +35,9 @@ TARGET_LINK_LIBRARIES(gpu_nvtx ${CUDA_LIBRARIES} nvToolsExt)
 # Test 12: array of structures of pointers
 CUDA_ADD_EXECUTABLE(gpu_structure_pointers "${CMAKE_CURRENT_SOURCE_DIR}/gpu_structure_pointers.cu")
 
+# Test 13: using Boost MPL in CUDA kernel
+CUDA_ADD_EXECUTABLE(gpu_boost_mpl "${CMAKE_CURRENT_SOURCE_DIR}/gpu_boost_mpl.cu")
+
 # Bug 1: compiler crash with wrong array reference
 CUDA_ADD_EXECUTABLE(gpu_bug_1 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_ice.cu")
 
