@@ -38,6 +38,9 @@ CUDA_ADD_EXECUTABLE(gpu_structure_pointers "${CMAKE_CURRENT_SOURCE_DIR}/gpu_stru
 # Test 13: using Boost MPL in CUDA kernel
 CUDA_ADD_EXECUTABLE(gpu_boost_mpl "${CMAKE_CURRENT_SOURCE_DIR}/gpu_boost_mpl.cu")
 
+# Test 14: redirect GPU printf to anothe stream
+CUDA_ADD_EXECUTABLE(gpu_printf_redirect "${CMAKE_CURRENT_SOURCE_DIR}/gpu_printf_redirect.cu")
+
 # Bug 1: compiler crash with wrong array reference
 CUDA_ADD_EXECUTABLE(gpu_bug_1 "${CMAKE_CURRENT_SOURCE_DIR}/cuda_bug/gpu_nvcc_ice.cu")
 
